@@ -13,6 +13,7 @@ var prevClickedYPos;
 var cursorWidth = 5;
 var strokeColor = "white";
 
+//initial setup for the canvas
 function setup(){
     canvas.width = WIDTH
     canvas.height = HEIGHT
@@ -32,6 +33,7 @@ function setup(){
     setInterval(changeStrokeColor, 2000);
 }
 
+//drawBorderLines to draw the axis in canvas
 function drawBorderLines(){
     ctx.beginPath();
     ctx.strokeStyle = "rgba(0,0,0,0.1)";
@@ -49,6 +51,7 @@ function drawBorderLines(){
     ctx.closePath();
 }
 
+// Func when the mouse is pressed
 function onMouseDown(e){
     mouseClicked = true
     prevClickedXPos = e.clientX;
@@ -56,10 +59,12 @@ function onMouseDown(e){
 
 }
 
+//Func when the mouse is released
 function onMouseUP(e) {
     mouseClicked = false;
 }
 
+//Func when the mouse moves
 function onMouseMove(e) { 
 
     if (mouseClicked) {
@@ -91,19 +96,23 @@ function onMouseMove(e) {
     prevYPos = e.clientY
 }
 
+//setValue to set the current cursor width
 function setValue() {
     cursorWidth = document.getElementById("range").value;
     document.getElementById("brushRange").innerHTML = cursorWidth;
 }
 
+// changeStrokeColor to generate random color
 function changeStrokeColor(){
     strokeColor =  "rgb(" + randomNumGenerator() + "," + randomNumGenerator() + "," + randomNumGenerator() + ")"
 }
 
+// Generates random number between 0 to 255
 function randomNumGenerator(){
     return Math.floor(Math.random() * 256);
 }
 
+// to reset the Screen
 function resetScreen(){
     ctx.beginPath();
     ctx.fillStyle = "grey";
@@ -113,6 +122,7 @@ function resetScreen(){
    // drawBorderLines();
 }
 
+// to download the Image
 function downloadImage(){
     var a = document.createElement("a");
     document.body.appendChild(a);

@@ -12,4 +12,16 @@ input[type="range"] {
     top: 68%;
     left: 49.25%;
     font-size: 26px;
+    font-family: "Comic Sans MS";
+}
+
+.button {
+    padding: 5px 15px;
+    background-color: #40CAFC;
+    border: none;
+    border-radius: 2px;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    font-family: "Comic Sans MS";
+    letter-spacing: 1px;
 }
