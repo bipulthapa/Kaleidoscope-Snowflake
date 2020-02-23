@@ -1,0 +1,15 @@
+input[type="range"] {
+    margin: 50px;
+    transform: rotate(270deg);
+    width: 300px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+
+#brushRange {
+    position: absolute;
+    top: 68%;
+    left: 49.25%;
+    font-size: 26px;
+}
